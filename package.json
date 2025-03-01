@@ -1,0 +1,37 @@
+{
+  "name": "hit-syntax-highlighting",
+  "displayName": "HIT Audio Source File Syntax",
+  "description": "Custom syntax highlighting for HIT Audio Source File.",
+  "version": "0.1.0",
+  "publisher": "kodowiec",
+  "license": "GPL-3.0-only",
+  "repository": "https://github.com/kodowiec/TSO-hit-syntax-highlighting",
+  "engines": {
+    "vscode": "^1.0.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [
+        {
+            "id": "hits",
+            "aliases": [
+                "HIT Audio Source File"
+            ],
+            "extensions": [
+                ".hit",
+                ".hits"
+            ],
+            "configuration": "./hits.configuration.jsonc"
+        }
+    ],
+    "grammars": [
+      {
+        "language": "hits",
+        "scopeName": "source.hit",
+        "path": "./syntaxes/hit.tmLanguage.json"
+      }
+    ]
+  }
+}

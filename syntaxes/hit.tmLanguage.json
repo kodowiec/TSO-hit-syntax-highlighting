@@ -1,0 +1,73 @@
+{
+  "scopeName": "source.hit",
+  "patterns": [
+    {
+      "name": "keyword.instruction.hit",
+      "match": "\\b(?:note|note_on|note_off|loadb|loadl|set|settt|wait|callentrypoint|wait_samp|test|add|sub|div|mul|cmp|less|greater|not|rand|abs|limit|error|assert|add_to_group|remove_from_group|get_var|loop|set_loop|callback|smart_add|smart_remove|smart_removeall|smart_setcrit|smart_choose|and|nand|or|nor|xor|max|min|inc|dec|printreg|play_trk|kill_trk|push|push_mask|push_vars|call_mask|call_push|pop|test1|test2|test3|test4|smart_setlist|seqgroup_kill|seqgroup_wait|seqgroup_return|getsrcdatafield|seqgroup_trkid|setll|setlt|settl|waiteq|waitne|waitgt|waitlt|waitge|waitle|duck|unduck|testx|setlg|setgl|throw|setsrcdatafield|stop_trk|setchanreg|play_note|stop_note|kill_note|smart_index|note_on_loop)\\b"
+    },
+    {
+      "name": "keyword.control.ifs",
+      "match": "\\b(?:call|jump|ifeq|ifne|ifgt|iflt|ifge|ifle)\\b"
+    },
+    {
+      "name": "invalid.deprecated",
+      "match": "\\b(?:nop)\\b"
+    },
+    {
+      "name": "keyword.control.end",
+      "match": "\\b(?:end|return)\\b"
+    },
+    {
+      "name": "comment.line.double-slash",
+      "match": "//.*"
+    },
+    {
+      "name": "comment.line.double-dash",
+      "match": ";.*"
+    },
+    {
+      "name": "comment.line.double-slash.hit",
+      "begin": "//",
+      "beginCaptures": {
+        "0": {
+          "name": "punctuation.definition.comment.hit"
+        }
+      },
+      "end": "$"
+    },
+    {
+      "name": "comment.block.hit",
+      "begin": "/\\*",
+      "beginCaptures": {
+        "0": {
+          "name": "punctuation.definition.comment.begin.hit"
+        }
+      },
+      "end": "\\*/",
+      "endCaptures": {
+        "0": {
+          "name": "punctuation.definition.comment.end.hit"
+        }
+      }
+    },
+    {
+      "name": "constant.language.registers",
+      "match": "(?i)(?<=,)\\s*[xy]\\b(?!.*\\.reg)"
+    },
+    {
+      "name": "constant.numeric.decimal",
+      "match": "\\b[0-9]+\\b"
+    },
+    {
+      "name": "constant.numeric.hexadecimal",
+      "match": "(?i)\\$\\b\\h+\\b|\\b0x\\h+\\b"
+    },
+    {
+      "name": "constant.numeric.binary",
+      "match": "%\\b[0-1]+\\b"
+    }
+  ],
+  "repository": {},
+  "fileTypes": ["hits"],
+  "name": "HIT Audio Source File"
+}
